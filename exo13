@@ -1,0 +1,101 @@
+const busList = [
+  41,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  37,
+  1,
+  1,
+  1,
+  1,
+  1,
+  659,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  23,
+  1,
+  1,
+  1,
+  1,
+  13,
+  1,
+  1,
+  1,
+  1,
+  1,
+  19,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  29,
+  1,
+];
+
+const busList1 = [937, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 17];
+
+const getBusNearestArrival = (wantedArrival, busId) => {
+  const numberOfShift = wantedArrival % busId;
+  return numberOfShift == 0 ? true : false;
+};
+
+const solve = () => {
+  let timestamp = 0;
+  let numberOfValidBus = 0;
+  while (numberOfValidBus != busList.length) {
+    numberOfValidBus = 0;
+    while (
+      numberOfValidBus < busList.length &&
+      getBusNearestArrival(
+        timestamp + numberOfValidBus,
+        busList[numberOfValidBus]
+      )
+    ) {
+      numberOfValidBus++;
+    }
+    timestamp += 2688806677520676;
+  }
+  console.log(timestamp - 2688806677520676);
+};
+solve();
